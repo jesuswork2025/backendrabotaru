@@ -87,6 +87,9 @@ async def submit_data(data: UserData):
     await send_telegram_message(data.model_dump())
     return data
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the API"}
 @app.get("/ping")
 async def ping():
     """
